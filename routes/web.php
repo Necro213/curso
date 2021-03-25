@@ -19,4 +19,16 @@ Route::get('/', function () {
 
 Route::get("/calificaciones",[
     "uses"=>"CalificacionesController@calificacionesView",
+    "as" => "calificaciones"
+]);
+
+Route::get("/calificaciones/get",[
+    "uses"=>"CalificacionesController@getCalificaciones",
+    "as" => "calificaciones"
+]);
+
+
+Route::post("/calificaciones/registrar",[
+    "uses"=>"CalificacionesController@registrarCalificacion",
+    "as" => "calificacion.reg"
 ]);
