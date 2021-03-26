@@ -15,6 +15,7 @@
                 <br><br>
                 <!--form id="form-calificaciones" method="post" action="{{route("calificacion.reg")}}"-->
                 <form id="form-calificaciones">
+                    <input type="hidden" id="idCalificacionEdit">
                     {{csrf_field()}}
                     <div class="row">
                         <div class="col-md-6">
@@ -55,6 +56,7 @@
                 <th>Materia</th>
                 <th>Calificacion</th>
                 <th>Aprobada</th>
+                <th>acciones</th>
                 </thead>
                 <tbody>
                     @foreach($calificaciones as $calificacion)
@@ -63,6 +65,7 @@
                             <td>{{$calificacion->materia}}</td>
                             <td>{{$calificacion->calificacion}}</td>
                             <td>{{$calificacion->aprobada}}</td>
+                            <td><button class="btn btn-primary" onclick="editar({{$calificacion}})">editar</button></td>
                         </tr>
                     @endforeach
                 </tbody>

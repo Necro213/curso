@@ -32,3 +32,6 @@ Route::post("/calificaciones/registrar",[
     "uses"=>"CalificacionesController@registrarCalificacion",
     "as" => "calificacion.reg"
 ]);
+Route::post("/calificaciones/editar/{id}",[
+    "uses"=>"CalificacionesController@editarCalificacion",
+]);
